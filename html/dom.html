@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --yelow-color:#F7DF1E;
+            --dark-color:#222222;
+        }
+        .cards{
+            border:thin solid var(--yelow-color);
+            padding: 1rem;
+        }
+        .card {
+            display: inline-block;
+            background-color: var(--dark-color);
+            color: var(--yelow-color);
+        }
+        .card figcaption{
+            padding: 1rem;
+        }
+        .rotate-45{
+            transform: rotate(45deg);
+        }
+        .rotate-135{
+            transform: rotate(-135deg);
+        }
+        .opacity-80{
+            opacity: .8;
+        }
+        .sepia{
+            /*Filtro de Css de Sepia*/
+            filter:sepia(1);
+        }
+        .eventos-flujo div{
+            padding: 4rem;
+            font-size:2rem;
+            text-align: center;
+        }
+        .uno{
+            background-color:aqua;
+        }
+        .dos{
+            background-color:gold;
+        }
+        .tres{
+            background-color:lightblue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Web Apis</h1>
+    <h2>DOM:Document Objetc Model:Representa el HTML</h2>
+    <h2>BOM:Browser Object Model</h2>
+    <h2>CSSOM:Css Object Model</h2>
+    <h2>Web APIs</h2>
+    <ul>
+        <li>Eventos</li>
+        <li>Forms</li>
+        <li>AJAX - Fetch</li>
+        <li>History</li>
+        <li>Web Storage</li>
+        <li>Geolocation</li>
+        <li>Drag & Drop</li>
+        <li>Indexed DB</li>
+        <li>Canvas</li>
+        <li>MatchMedia</li>
+        <li>etc...</li>    
+    </ul>
+    <br>
+    <hr>
+    <br>
+    <h3>Manejo del Doom</h3>
+    <p id="que-es">lorem456</p>
+    <nav id="menu">
+        <ul>
+            <li><a href="#">Seccion 1</a></li>
+            <li><a href="#">Seccion 2</a></li>
+            <li><a href="#">Seccion 3</a></li>
+            <li><a href="#">Seccion 4</a></li>
+            <li><a href="#">Seccion 5</a></li>
+        </ul>
+    </nav>
+    <input type="text" name="nombre" placeholder="Nombre">
+    <a class="link-dom" href="dom.html" style="background-color:#F7DF1E;color:#222;" data-description="Document Object Model">DOOM</a>
+    <section class="cards">
+        <figure class="card">
+            <img src="https:placeimg.com/200/200/animals" alt="Tech">
+            <figcaption>Animals</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https:placeimg.com/200/200/tech" alt="Tech">
+            <figcaption>Tech</figcaption>
+        </figure>
+    </section>
+    <template id = "template-card">
+        <figure class="card">
+            <img>
+            <figcaption></figcaption>
+        </figure>
+    </template>
+    <h3>Eventos en JvS</h3>
+    <h4>Manejadores de Eventos</h4>
+    <button onclick="hola()">Evento con atributo HTML</button>
+    <br><br>
+    <button id="evento-semantico">Evento con Manejador Semantico</button>
+    <button id="evento-multiple">Evento con Manejador Multiple</button>
+    <button id="evento-remover">Removiendo Eventos con Manejadores Multiples</button>
+    <br>
+    <br>
+    <h4>Flujo de Eventos</h4>
+    <section class="eventos-flujo">
+        <div class="uno">
+            1
+            <div class="dos">
+                2
+                <div class="tres">
+                    3
+                    <a href="https://www.youtube.com/watch?v=2LgnPW_VZYU&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA&index=76" target="_blank" rel="noopener">Xmt</a>
+                </div>
+            </div>
+        </div> 
+    </section>
+    <br><br><br><br><br>
+
+    <h3 style="width:20px;">Manejo del BOM</h3>
+    <button id="abrir-ventana">Abrir Ventana</button>
+    <br><br>
+    <button id="cerrar-ventana">Cerrar Ventana</button>
+    <br><br>
+    <button id="imprimir-ventanas">Imprimir Ventana</button>
+    <br><br>
+    <script src="../javasript/dom.js"></script>
+    <script>
+        //El doom es una interfaz estandarizada,pero el doom en el control de los nodos,para manipular html
+        //console.log(window)
+        //console.log(SpeechSynthesisUtterance)
+        /*let texto = "xl";
+        const hablar = (texto) => speechSynthesis.speak(new SpeechSynthesisUtterance(texto))
+        hablar(texto)*/
+    </script>
+
+</body>
+</html>

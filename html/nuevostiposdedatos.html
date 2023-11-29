@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos Tipos de </title>
+</head>
+<body>
+    <h1>Nuevos Tipos de Datos en JavaScript</h1>
+    <!--Symbol de manera global nos permite crear identificadores unicos, de referencia-->
+    <script>
+        //Le pasamos como paratremo una etiqueta para que se diferencie
+        //datos primitivos
+        let id = Symbol("id");
+        let id2 = Symbol("id2");
+        console.log(id === id2);
+        //CREA propiedad privado de los objetos.
+        // Una propiedad privado en el objeto no podemos saber el nombre de la propiedad
+        const NAME =Symbol("name");
+        const SALUDAR = Symbol("saludar");
+        const persona = {
+            [NAME]:"Luisa",
+            edad:35,
+            irse(){ console.log("IRSEdsdasd")}
+            
+        }
+        console.log(persona);
+        persona.irse();
+
+        persona.NAME  = "Luisita"
+        console.log(persona);
+        console.log(persona.NAME);
+        // Asi puedo verificar mi propiedad privada 
+        console.log(persona[NAME]);
+        persona[SALUDAR] = function(){console.log(`Hola`)}
+        console.log(persona);
+        persona[SALUDAR]();
+
+        for(let propiedad in persona){
+            console.log(propiedad); // La propiedad
+            console.log(persona[propiedad]) // El valor de la propiedad
+        }
+        //Metodo para ver las propiedad privadas
+        console.log(Object.getOwnPropertySymbols(persona));
+    </script>
+
+
+</body>
+</html>

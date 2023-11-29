@@ -1,0 +1,61 @@
+{
+  "saiyayines": [
+    {
+      "nombre": "Pan",
+      "constelacion": "EnProceso",
+      "id": 7
+    },
+    {
+      "nombre": "dsd",
+      "constelacion": "dasdadasd",
+      "id": 12
+    },
+    {
+      "nombre": "s",
+      "constelacion": "s",
+      "id": 14
+    },
+    {
+      "nombre": "s",
+      "constelacion": "s",
+      "id": 15
+    },
+    {
+      "nombre": "ssss",
+      "constelacion": "sssss",
+      "id": 16
+    },
+    {
+      "nombre": "dsd",
+      "constelacion": "dsadad",
+      "id": 17
+    },
+    {
+      "nombre": "d",
+      "constelacion": "d",
+      "id": 18
+    }
+  ],
+  "dioses": [
+    {
+      "id": 1,
+      "nombre": "Conejo",
+      "de": "Planeta 7"
+    },
+    {
+      "id": 2,
+      "nombre": "ConejoGordo",
+      "de": "Planeta 6"
+    },
+    {
+      "id": 3,
+      "nombre": "Payaso",
+      "de": "Planeta 5"
+    },
+    {
+      "id": 4,
+      "nombre": "Elefante",
+      "de": "Planeta 4"
+    }
+  ]
+}

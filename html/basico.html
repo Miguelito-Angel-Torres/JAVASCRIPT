@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fundamentos JavaScript</h1>
+    <script>
+        //duda:
+        /*function sumar(num1,num2){ const maria = num1 + num2;}
+        sumar(5,4);
+        console.log(sumar.maria + 5 );
+
+        const $nu = "25";
+        console.log(Number($nu))*/
+
+        function letra(){ console.log('Maria')};
+        letra();
+        const le = letra();
+        
+
+
+        // Admito de Variable Globar
+        var hola = "Juan"
+        console.log(hola);
+        // Admito de Variable de Bloque
+        let hello = "Mariano"
+        console.log(hello);
+        console.log(window.hola);
+        console.log(window.hello);
+        var musica = "Rick"
+        console.log("Variable Musica antes del Bloque",musica);
+        // Esto es Bloque
+        {
+            let musica = "Pok";
+            console.log("Variable Musica dentro del Bloque",musica);
+
+        }
+        // Metdo trim quitar espacios en blanco
+        // Metodo Split para convertir un array un texto string
+        console.log("Variable Musica despues del Bloque",musica);
+        //Const: Variable que no va cambiar su valor
+        const Pi = 3.1416;
+        console.log(Pi);
+        // Reclarar un valor
+        let a ;a = "Lucas";console.log(a)
+        //Cadena de Texto Strings
+        let nombre = "Lucas";
+        //Aveces se utiliza
+        let nombres = new String("HolaMundo")
+        let lorem = "Roberto Lucas"
+        console.log(nombre.length,nombres.length,
+        nombre.toUpperCase(),nombre.toLowerCase(),lorem.includes("guel"),lorem.trim()
+        ,lorem.split(" "));
+        //Interpolcion (Template String)
+        let nombre1 = "Juana"
+        let ape = "Juanas"
+        let saludo2 = `Hola mi nombre es: ${nombre} ${ape}`
+        console.log(saludo2)
+        //Numbers:
+        // Metodo toFixed devuele el valor en cuanto numeros decimales quieres
+        let c = 2
+        let x  = new Number(1);
+        let j= 7.19
+        console.log(c,x,j.toFixed(5),parseFloat(j),parseInt(j))
+        //Indica que tipo de valor :
+        console.log(typeof c,typeof j)
+        //Booleans:
+        let v = true;
+        let f = false;
+        let va = new Boolean(true)
+        console.log(v,f,va)
+        //undefined,null , NAN
+        // undefined Cuando esta la variable no esa inicializado que el valor es ausente
+        //null asignado por el porgramador:es  un valorespecial que indica la ausencia de un valor 
+        //Nan not a Number 
+        let indefinida;
+        let nuxll = null;
+        let noEsUnNumero = "maria" * 3.7;
+        console.log(indefinida,nuxll,noEsUnNumero)
+        //Funciones Declarada:
+        function Func(){console.log("J")};function Fu(){return "J"};function R(no ="Des",ed = 0){console.log(`Mi n es : ${no} ten : ${ed}`)}
+        const F = function(){console.log("Funcion anonima")}
+        Func();console.log(Fu()),R(),F();
+        //Arreglo
+        const xa = [1,true,"H",["A","B"]]
+        const ca = Array.of("x","y")
+        console.log(xa,ca);
+        // LLenar los elementos de un Array
+        const ds = Array(3).fill(false)
+        console.log(ds)
+        //Agregar
+        xa.push("X");
+        //Quita el ultimo de Elemento
+        xa.pop()
+        // Recibe una function que se va ejecutar por cada Elemento del Array
+        xa.forEach(function (el,index){console.log(`<li id=${index}>${el}</li>`)});
+        //Objetos
+        const lux = {nombre:"Xs",pasatiem:["Ac","Xs"],s:false,coc:{email:"dx",l:"x"},sal:function(){console.log("s")}}
+        console.log(lux)
+        lux.sal()
+        // Forma un Array con los valores y propiedades del objeto
+        console.log(Object.keys(lux))
+        console.log(Object.values(lux))
+        // Verifca si un objeto tiene la propiedad : vota true o false
+        console.log(lux.hasOwnProperty("nombre"))
+        //Tipos de Operadores
+        /* Aritmetica: + - * / % () */
+        // == 2  iguales es compraciones de valores , ===3 iguales es compracion de tipo de datos y de valor
+        let modulo = 5%2;
+        console.log(modulo)
+        // ! -- Not niega (inversa)de True vuelve a False y vicerversa
+        //  ||--Or :Cuando tenga 2 o mas condi, con que una cumpla, es decir sea verdadera.EL or validara
+        // && --And :Todas las condiciona se cumpla
+        // Operador Ternario(condicion)?verdadero:false
+        const edad = 17;
+        let eresMayor = (edad >=18)?"Eres MA":"Eres ME"
+        console.log(eresMayor)
+        //Ciclo Se evalua condicion que se esten ejecutando hacia que se cumpla una condicion
+        let contador = 0;
+        /*while(contador<1){console.log(contador)
+            contador++}*/
+        //Siempre con do Se ejecuta una vez y la segunda adelante indica la condicion
+        /*do{console.log("do:" +contador)
+            contador++}while(contador<1)*/
+        for (let i=0; i<1;i++) {
+            const element  = i;
+            console.log(element)}
+        let nx = [10,20];
+        for (let i = 0; i <nx.length;i++) {const element = nx[i];console.log(element)}
+        //for para objeto : in
+        const js ={nombre:"M",apellido:"N"};
+        for(const props in js){console.log(`Key:${props},Value:${js[props]}},`)} 
+        // for:of, mas para arreglo
+        for(const el of nx){console.log(el)}
+        let xs= "Mxs"
+        for(const caracter of xs){console.log(caracter)}
+        //Manejo de Error:
+        try{console.log("Try el codigo a evaluar");noExiste;
+        }catch(error)
+        {console.log("Captura caulquier error");console.log(error)}
+        finally{console.log("El bloque siempre se ejecuta al Final")}
+        // Error personalizado
+        try{let numero="y";
+        if(isNaN(numero)){throw new Error("El caracter introducido no es un numero")};console.log(numero*numero)}
+        catch(error)
+        {console.log(`Se produjo el sgt error: ${error}`)}finally{console.log("Loque")}
+        // break: indica que sale le llega todo , Continue : indica pasa a la sgt(omiti lo que le indicas: salta la iteracion)
+        const ns = [1,2,3];
+        for(let i=0;i<ns.length;i++){
+            if(i===1){break;}console.log(ns[i])
+        }
+        for(let i=0;i<ns.length;i++){if(i===1){continue;}console.log(ns[i])}
+        // Destructuracion: Asignar valores a arreglos o objectos :eJEMPL:let {nombre,edad} = props
+        // tiene que llamarse igual el valor que la propiedad que va destructurar y tiene que estar en la misma posicion
+        const nxs = [1,2];let uno = nxs[0];let dos = nxs[1];console.log(uno,dos);let [on,two] = nxs;console.log(on,two);
+        const persona = {no:"d",apellido:"dsx"};let {no,apellido} = persona;console.log(no,apellido);
+        //Objetos literales:
+        let nombresA = "xsd"
+        edadA = 7;
+        const perro = {nombre:nombresA,edad:edadA,ladrar:function(){console.log("XS")}};console.log(perro);perro.ladrar();
+        const dog ={nombresA,edadA,raza:"Callejero",ladrar(){console.log("Xss")}};console.log(dog);dog.ladrar()
+        //Parametros Rest ,Operador Spread
+        //Parametros Rest : Es una forma vitualmente agregando paremetros infi ya que sea una funcion o una variable
+        // Todo que de c o despues de c lo trata como si fuera un array; el párametro c recibe todo partir del valor3  a consecutivo
+        //Parametrso infinito
+        function su(a,b,...c){let rx = a+b;c.forEach(function(n){rx += n}); return rx};console.log(su(1,2,3,4,5))
+        //Operdaor Spread // Es combinacion de elemento de un array o un variable 
+        const ar=[1,2,3];ar2 =[4,5];console.log(ar,ar2);const ar3 =[...ar,...ar2];console.log(ar3);
+        const xsa = "Mi";const xsq = "An";const xsqa = [...xsa,...xsq];console.log(xsqa)
+        //Arroy Functions:
+        const nuxs = [1,2,3,4];
+        // forEact es para arreglo, recorrer y dar funcion 
+        nuxs.forEach((el,index)=> console.log(`Elm ${el} posic ${index}`))
+        const pex = {nombre:"kex",ladrar(){console.log(this)}};pex.ladrar();
+        //Prototipos
+        // --Clase:Modelo a Seguir Objetos:Es una instancia de una clase Atributos: son variables de un objeto Metodos: son las acciones que un objeto puede realizar
+        //Funcion constructura de Propotipo
+        function Animal(nombre,genero){
+            //Atributo
+            this.nombre = nombre;
+            this.genero = genero;}
+         //Metodo agregado al prototipo de la funcion construcytrao
+        Animal.prototype.sonar = function(){console.log("dsddsdsdsdsdsd")};
+        Animal.prototype.saludar = function(){console.log(`Hola ${this.nombre}`)};
+        //Herencia de Prototipica: de Un padre a un Hijo
+        function Perro(nombre,genero,tama){
+            //Un metodo llamado Super:que van a llamr el constructor de la clase Padre
+            //Le indico que su elemento Padre de PERRO va ser Animal
+            this.super = Animal;
+            this.super(nombre,genero);
+            this.tama = tama;
+        }
+        //Perro esta heredando de AnimaL (Puede usar metodos y generar nuevos metodos)
+        Perro.prototype = new Animal();
+        Perro.prototype.constructor=Perro;
+        // Sobreescritura de Metodo del Prototipo Padre en hijo
+        Perro.prototype.sonar = function(){console.log("Soy un perro y mi sonido es un ladrido")}
+        Perro.prototype.ladrar = function(){console.log("GUA GUA GUA")}
+        //Crear un nuevo objeto
+        const sno = new Perro("Mardsdsd","Macho","Mediano");
+         lox = new Animal("lOLA","hEMBRA");
+        console.log(sno);
+        console.log(lox);
+        sno.sonar();
+        sno.saludar();
+        lox.saludar();
+        // CLase y Herenecia:
+        class Animales{
+            // El constructor es un metodo especial que se ejecuta en el momento de instanciar la clase 
+            //Metodo Constructor es que recibe dicho valores 
+            constructor(nombre,genero){
+                //Atributos
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+            // Metodos de una clase: Los metodos puede recibir parametros en casa que necesite
+            saludar(){console.log(`Hola ${this.nombre}`)}
+            sonar(){console.log("Sonido por que estoy vivo")}
+        }
+        // Funcion para la Herencia: Con extends le indicai que va heredar del Padre y va heredar funciones y el super hereda el constructor 
+        class Perros extends Animales{
+            //Constructor de Perro
+            constructor(nombre,genero,tama){
+                //con el metodo super()se manda a llamar el constructor de la clase padre (llama al Constructor)
+                super(nombre,genero);
+                this.tama = tama;
+                this.raza = null;
+            }
+            //Modificar el metodo de mi Padre
+            sonar(){console.log("Soy un perro y mi sonido es un ladrido")}
+            ladrar(){console.log("Guau Guau")}
+            // Estoy indica que el metodo va ser estatico
+            static Que(){console.log("Los pérros son asi")}
+            // Los setters y getters son metodos especiales que nos permiten establecer y obtener el valor de un atributo de nuestra clase
+            //obtener el valor
+            get GetRaza(){return this.raza;};
+            set SetRazas(raza){return this.raza = raza;}
+
+
+        }
+        // Puedo usar metodos y el super los atributos
+        // Por casa objeto que se crea se va duplicando los metodos (En la clase javascript hace el trabajo de no duplicar) Ya estan en el prototipado
+        const mimi = new Perros("mimidsdasdasdasdasds","hembra","pequeño");
+        const dodo = new Animales("dodo","macho");
+        console.log(mimi.nombre)
+        console.log(mimi);
+        console.log(dodo);
+        mimi.saludar();
+        mimi.sonar();
+        console.log(mimi.tama);
+        console.log(mimi.raza);
+        console.log(mimi.GetRaza);
+        mimi.SetRazas = "Gra Danes"
+        console.log(mimi.raza);
+        //console.log(mimi.GetRaza);
+        mimi.ladrar()
+        dodo.saludar();
+        dodo.sonar(); 
+        // Metodo estaticos , getter y setters: set(Para asignar), get(Obtener o Extrart)
+        //Un metod estatico se puede ejecutar sin necesidad de instanciar la clase, con la instancia no se puede usar el metodo
+        Perros.Que();
+        //Objeto Console: Objetos propios de javascript
+        /*console.log(console);console.error("Estoy es un error");console.warn("Esto es un Aviso");console.info("Mensaje Informativa")console.log("Un registro de lo que ha pasadoen nuestra aplicacion")
+        console.clear();console.log(window);*/
+        // La presentacion de Htm :Document
+        /*console.log(document);
+        console.dir(window);console.dir(document);console.clear();
+        console.group("Cu de Juana");console.log("Curso de java");console.log("Curso de javascr");console.groupEnd();
+        console.groupCollapsed("Cu de Juana");console.log("Curso de java");console.log("Curso de javascr");console.groupEnd();
+        console.table(Object.entries(console))
+        */
+       //Objeto Date:
+       //console.log(Date())
+       let fecha = new Date();
+       console.log(fecha.getDate()) //Obtiene el dia del mes
+       console.log(fecha.getDay()) // El dia de la Semana
+       console.log(fecha.getMonth()) // El dia del mes
+       console.log(fecha.getFullYear()) // El año 
+       console.log(fecha.getHours()) //Hora
+       console.log(fecha.getMinutes()) //Min
+       console.log(fecha.getSeconds());//Segundo
+       console.log(fecha.getMilliseconds()); //Milise
+       console.log(fecha.toString()); 
+       console.log(fecha.toDateString()) // La fecha en formate Tue Jul 19 2022
+       console.log(fecha.toLocaleString()) // fecha y hora
+       console.log(fecha.toLocaleDateString()) // La fecha
+       console.log(fecha.toLocaleTimeString()) //Hora
+       console.log(fecha.getTimezoneOffset())
+       console.log(Date.now());
+       let cs = new Date(2002,1-1,15);
+       console.log(cs)
+       //Objeto Math
+       console.log(Math);
+       console.log(Math.PI);
+       //Valor absoluto     
+       console.log(Math.abs(-7.8));
+       // Redondea el numero entero mayor
+       console.log(Math.ceil(7.2));
+       // Redondea el numero entero menor
+       console.log(Math.floor(7.9));
+       // Redondea el Fijo dependiendo del numero
+       console.log(Math.round(7.5));
+       // Raiz
+       console.log(Math.sqrt(81))
+       //Potencia
+       console.log(Math.pow(20,5))
+       // Indicador si el numero es negativo o positivo
+       console.log(Math.sign(0)) // Positivo :1 Neg:-1 y numero 0 da 0
+       console.log(Math.round(Math.random()*10)) // Aletorio de 0 a 1 
+       // Operador de CortoCircuito:
+       // Corto Or:cuando el valor de la izquierda en la expresion siempre pueda validar a true, es el valor que se cargara por defecto
+        //Corto And:Cuando el valor de la izquierda en la expresio siempre pueda validar al false, es el valoror que se cargara por defecto
+       function saludar(nombre){
+        // Indica si viene definido nombre el valor de la variable va ser nombre sino ponle "Desconocido"
+        nombre = nombre &&"Desconocido";
+        console.log(`Hola ${nombre}`)};
+       saludar();
+       // No es necesario poner el Windows porque ya hace referencia que estas trabajando en windows , pero son metodos de windows
+       //alert,confirm y prompt
+       //alert("Una Alerta");confirm("Confirmacion") // Lo que pulse Da True o False;prompt("Ingrese Valor")
+        //let confi =confirm("Confirma");let aviso = prompt("Ingre Valor");console.log(confi);console.log(aviso);
+        //Expresiones Regulares sirve para validar 
+        // Definir Expresiones Regulares
+        let cade = "Juana Lorem la 7Maria esta en su casa lorem456 "
+        // Son pequeñas modificaciones que se puede agregar a nuestra expresion Regluar
+        let expReg = new RegExp("Lorem","ig");
+        let expReg2 =/lorem{1,}/ig;
+        // Va probar que la expresion regular que exista adentro de la cadena
+        //console.log(expReg2)
+        //console.log(expReg2.test(cade))
+        //console.log(expReg2.exec(cade))
+        //console.log(expReg.test(cade))
+        // Devuelve un Arragle de otras considencias
+        //console.log(expReg.exec(cade))
+        //Funciones anomimas auto ejecutable: El  ultimo parensetis que le ejecuta
+        //alert("Hola") es identifica a eso //sON FUNCIONES QUE SE EJECUTA SIN LLAMAR A LA FUNCION
+        // () es donde va recibir los parametors
+        /*(function(d,w,c){
+            console.log("IIFE");
+            console.log(d);
+            console.log(w);
+            c.log(c);            
+        })(document,window,console);*/
+        // La Crockford (Javascript)
+        //((function(){console.log("version Crockford")})());
+        //Fackebbok
+        //!function (){console.log("version")}();
+        //Unarion +function(){console.log("version Unitario")}()
+        // Modulos (inport/export) Realizado
+        //Temporizadores(setTimeout && setInterval)
+        console.log("INICIO")
+        // Temporizadores:
+        // SetTimeo,eut se ejecuta una sola vez 
+        /*setTimeout(() => {
+            console.log("Ejecutando un setTimeOut,esto se ejecuta una sola vez")
+        }, 3000);*/
+        //Ejecutar varias veces en base de un intervalo de tiempo
+        // SetInterval se Ejecuta varias veces dependiedno de los segundos
+        /*setInterval(() => {
+            console.log("Ejecutando un setInterval,esto se ejecuta infinidamente cada cierto intervalo de tiempo")
+        }, 1000);*/
+        let temporizador = setTimeout(() => {
+            console.log(new Date().toTimeString())
+        }, 1000);
+        clearTimeout(temporizador); // Lo cancela
+        // Funciones que cancela el SetTimeout Es el ClearTimeout()
+        let temporizadorSetInteval = setInterval(() => {
+            console.log(new Date().toTimeString())
+        }, 1000);
+        clearInterval(temporizadorSetInteval);
+        //console.log("despues del clearInterval")
+        /////////Asincronia y el Event Loop:
+        /*Codigo Sincrono Bloqueantes*/
+        /*(() =>{
+            console.log("Codigo Sincrono");
+            console.log("Inicio");
+            function dos(){console.log("Dos");}
+            function uno(){
+                console.log("Uno")
+                dos();
+            console.log("Tres");}
+            uno();
+            console.log("Fin")
+        })();*/
+        //console.log("*******************")
+        /*Codigo Asincrono No Bloqueante*/
+        /*(() =>{
+            console.log("Codigo Asincrono");
+            console.log("Inicio");
+            function dos(){
+                setTimeout(function(){
+                    console.log("Dos")
+                }, 1000);
+            }
+            function uno(){
+                // Entra al Metodo setTimeout , no da una respuesta al instante 
+                // Genera llamada Asincrona las function de SeTimeout
+                setTimeout(function(){
+                   console.log("Uno") 
+                },0);
+                dos();
+                console.log("Tres");
+            }
+            uno();
+            console.log("FIN")
+        })();*/
+        ///////Callbacks:(llamada de Vuelta) es el mecanismo para trabajar con la sincronia
+        /// Es una funcion que se va ejecutar despues que otra lo haga
+        // Vamos a ver como una funcion se va invocar asi mismo dentro de si
+        /*function cuadradoCallback(value,callback){
+            // Tempororizador que sea dinamico:
+            setTimeout(() => {
+                // La function que recibe como parametro lo va invocar adentro del Temporizador
+                callback(value,value*value);
+            },0 | Math.random()*100);
+        };*/
+        //que vaya funcionando paso a paso y no que este perdiendo datos(variables,etc).
+        /*cuadradoCallback(0,(value,result)=>{
+            console.log("Inicia Callback")
+            console.log(`Callback:${value},${result}`);
+            cuadradoCallback(1,(value,result)=>{
+                console.log(`Callback:${value},${result}`);
+                cuadradoCallback(2,(value,result)=>{
+                console.log(`Callback:${value},${result}`);
+                });
+            });    
+        });*/
+        /////Promesas: Manejo de los Error del Callback
+        //  si cumple ejecuta el risou , si falla se ejecuta el richey
+        function cuadradoPromise(value){
+            //return un objeto de una instancia del objeto promise
+            // recibe una funcion
+            return new Promise((resolve,reject)=>{
+                if(typeof value !== "number") return Promise.reject(
+                    `Error,el valor "${value}" ingresado no es un numero`
+                );
+                setTimeout(() => {
+                    // metodo resolve de la promesa en caso que se cumpla
+                    resolve({
+                        value,
+                        result:value*value
+                    });
+                }, 0 | Math.random()*1000);
+            });
+        }
+        //Hay dos metodos para ir trabajando la sincronia el metodo then
+        // metodo then que indica que es el siguiente bloque que se va ejecutar (recibe la parte positiva de la promesa del resolve)
+        // metodo catch  captura el error de reject
+        cuadradoPromise(0)
+             .then((obj)=>{
+               console.log("Inicio Promise");
+               console.log(`La Promise ${obj.value}, ${obj.result}`)
+               return cuadradoPromise(1);
+             }).then((obj)=>{
+               console.log(`La Promise ${obj.value}, ${obj.result}`)
+               return cuadradoPromise(2);
+             }).then((obj)=>{
+               console.log(`La Promise ${obj.value}, ${obj.result}`)
+               console.log("Fin de la Promesa")
+             })
+             // Puede ser un objeto un mensaje lo que deseas
+             // Valida en Cualquier punto
+             .catch((error)=>{console.log(error)});
+             //Async -Await:
+             //Funciones Asincronas van a esperar que algo se cumpla para seguir ejecutando el proceso
+        function cuadradoPromise1(value){
+            //return un objeto de una instancia del objeto promise
+            // recibe una funcion
+            return new Promise((resolve,reject)=>{
+                if(typeof value !== "number") return Promise.reject(
+                    `Error,el valor "${value}" ingresado no es un numero`
+                );
+                setTimeout(() => {
+                    // metodo resolve de la promesa en caso que se cumpla
+                    resolve({
+                        value,
+                        result:value*value
+                    });
+                }, 0 | Math.random()*1000);
+            });
+        }
+        // Declarar funcion , poner la palabra async indica que es una funcion async
+        async function funcionAsyncronaDeclarado(){
+            //Peticiones Asincrona generalmente va hacer dada por una promesa
+            try {
+                console.log("Inicio Async Function");
+                // CLave para usar function async, es la palabra reservado (await : que indica espera el resulta)
+                let obj = await cuadradoPromise1(0);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                 obj = await cuadradoPromise1(1);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                obj = await cuadradoPromise1(2);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                console.log("Fin Async Function")
+
+            } catch (error) { 
+                console.log(error);  
+            }
+        }
+        funcionAsyncronaDeclarado();
+
+        const functionAsincronaExpresada = async () =>{
+            try {
+                console.log("Inicio Async Function");
+                // CLave para usar function async, es la palabra reservado (await : que indica espera el resulta)
+                let obj = await cuadradoPromise1(3);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                 obj = await cuadradoPromise1(4);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                obj = await cuadradoPromise1(5);
+                console.log(`Async Function: ${obj.value},${obj.result}`);
+                console.log("Fin Async Function")
+
+            } catch (error) { 
+                console.log(error);  
+            }
+
+        }
+        functionAsincronaExpresada();
+        /////////Symbols: nuevostiposdedatos.html (Nuevo Tipo de datos)
+        //////////Sets: Nuevo Tipo de datos es una arreglo mejorado que solo acepta valor unicos, valos primitivos
+        const set = new Set([1,2,3,3,4,true,false,false,"hola","HOLA",{},{}])
+        console.log(set);
+        console.log(set.size);
+        const set2 = new Set();
+        set2.add(1);set2.add(2);set2.add(3);set2.add(true);set2.add(true);
+        console.log(set2);
+        console.log("Recorriendo Set1");
+        for(elemento of set){
+            console.log(elemento);
+        }
+        console.log("Recorriendo Set2");
+        set2.forEach(elemento => console.log(elemento));
+        // Lo convierte un iterable de tipo Array
+        let arr = Array.from(set);
+        console.log(arr[0]);
+        set.delete("hola")
+        console.log(set);
+        // Metodo has comprueba que ese elemento si existe en la coleccion de elemento
+        console.log(set.has(1))
+        set2.clear();
+        console.log(set2);
+        ///////////////////Maps Son objeto que sirve para almacenar conjunto de valores asociado a maneja de objeto
+        // Es como una coleecion de datos como un objeto primitivo
+        let mapa = new Map();
+        mapa.set("nombre","Matilda");
+        mapa.set("apellido","Mali");
+        mapa.set("edad",35);
+        console.log(mapa);
+        console.log(mapa.size);
+        console.log(mapa.has("nombre"));
+        console.log(mapa.get("nombre"));
+        mapa.set("nombre","Matilda2")
+        console.log(mapa.get("nombre"));
+        mapa.delete("apellido");
+
+        mapa.set(19,"diecinueve");
+        mapa.set(false,"falso");
+        mapa.set({},{});
+        console.log(mapa);
+        //Recorrrer un mapa
+        for(let [key,value] of mapa){
+            console.log(`Llave:${key},Valor:${value}`)}
+        
+        const mapa2 = new Map([
+            ["nombre","Kena"],
+            ["edad",7],
+            ["animal","perro"],
+            [null,"nulo"]
+        ])
+        console.log(mapa2)
+        console.log(mapa2.get("nombre"));
+        const llaveMapa2 = [...mapa2.keys()];
+        const valoresMapa2 = [...mapa2.values()];
+        console.log(llaveMapa2);console.log(valoresMapa2)
+        //Variante tanto de Set y de Map, se llama WeakSet,WeakMaps
+        //Solo los WeakSet almacena Tipo Objetos y se le llama Referencia
+        /*const ws  = new WeakSet();
+        let valor1 = {"valor1":1};
+         let valor2 = {"valor2":2};
+         let valor3 = {"valor3":3};
+        ws.add(valor1);
+        ws.add(valor2);
+        console.log(ws);
+        console.log(ws.has(valor1));
+        ws.delete(valor2);
+        console.log(ws)
+        ws.add(valor2);
+        console.log(ws);*/
+        //setInterval(() => console.log(ws), 1000);
+        // Cuando se ejecute el setTimeout , y verifica que sus referencia esta nulo, lo limpia
+        /*setTimeout(() => {
+            valor1 = null;
+            valor2=null;
+            valor3 = null;
+        }, 5000);*/
+        //WeakMaps:
+        // Cuando es nulo indicando que no contega valor , se limpia
+        /*const wm = new WeakMap();
+        let llave1 = {};
+        let llave2 = {};
+        wm.set(llave1,1);
+        wm.set(llave2,2);
+        console.log(wm);
+        console.log(wm.has(llave1));
+        console.log(wm.get(llave1));
+        wm.delete(llave1);
+        console.log(wm);
+        wm.set(llave1,1);
+        console.log(wm);
+        setInterval(() => {
+           console.log(wm) 
+        }, 1000);
+        setTimeout(() => {
+            llave1 = null;
+            llave2 = null;
+        },5000);*/
+        //Iterables & Iterators
+        // Lo que se conoce como Iterador es justamente la interfaz , un especio de apuntador que va recorriendo los elemento y la misma instructura del dato
+        //Iterable es el elemento el cual su contenido se puede recorrer,Iterador es el apuntador que esta recorriendo(Mecanismo que esta recorriendo los elemento)
+        //const iterable = [1,2,3,4,5];
+        const iterable = new Set([1,2,3,3,4,5])
+        //const iterable = "Hola Mundo"
+        //const iterable = new Map([["nombre","jon"],["edad":35]]);
+        // Accedemos al iterador del iterable
+        //El iterador es un interfaces para recorrer elemento que sea itrerable
+        const iterador = iterable[Symbol.iterator]();
+        console.log(iterable);
+        //console.log(iterador.next());
+        //Recoorrer cada uno de los elementos
+        //console.log(iterador.next());
+        let next = iterador.next();
+        while(!next.done){
+            console.log(next.value);
+            next = iterador.next(); 
+        }
+        //Generators:
+        // Es una funcion que nos permite trabajar en una manera mas amigable con la interfaces de los iteradores de un elemento iterable
+        // * eso indica que es un generador , ya nos permite acceder ese Symbol.iterator, se utiliza con el yiel
+        // La function con el yiel indica varios return , cuando ejecutas nuevamente la function
+        function* iterablesX(){
+            yield "hola";
+            console.log("Hola xa");
+            yield "hola2";
+            console.log("Seguimos");
+            yield "hola3";
+            yield "hola4";
+        }
+        let iterador1 = iterablesX()
+        /*console.log(iterador1.next());
+        console.log(iterador1.next());*/
+        for(let y of iterador1){
+            console.log(y)}
+        //agregar en un arreglo
+        // Toma los valores,por cada ejecucion iterables(yiel) vaya guardando posicion de este arreglo 
+        /*const arreg = [...iterablesX()];
+        console.log(arreg);
+        function cuadrado123(valor){
+            setTimeout(() => {
+               return console.log({valor,resultado:valor*valor})
+            },Math.random()*1000);
+        };
+        function* generador123(){
+            console.log("Inicia Generator");
+            yield cuadrado123(0);
+            yield cuadrado123(1);
+            yield cuadrado123(2);
+            console.log("Termina Generator");
+        };
+        let gen = generador123();
+        for(let y of gen){
+            console.log(y)}*/
+        //////////////Proxies:
+        // Proxies es un nuevo mecanismo que tiene JavaScript que permite crear un objeto basado
+        // en un objeto literal inicial
+        const persona123 = {
+            nombre:"",
+            apellido:"",
+            edad:0
+        };
+        //creacion del manejador (handler)
+        const manejador = {
+            // Ese manejador va recibir un parametro , que es propio de este manejador que se va llamar Set()
+            set(obj,prop,valor){
+                //Aqui podemos realizar validaciones 
+                // Object.key(obj) : la lista de las llaves que tiene el objecto
+                // indexOf : indica comparar , si hay una considencia
+                if(Object.keys(obj).indexOf(prop) === -1){
+                    return console.log(`La propiedad ${prop} no existe en el objeto persona`)
+                };
+                if(
+                    (prop ==="nombre" || prop ==="apellido" ) && 
+                    // \s espacios en blanco  
+                    !(/^[A-Za-z\s]+$/g.test(valor))
+                ){
+                    return console.log(`La propiedad ${prop} solo acepta letras y espacios en blancos`)
+                }
+                obj[prop] = valor;  
+
+            }
+        }
+        //Proxy hace una vinculacion del objeto original con el objeto copia, atracvez de su manejar podemso realizar validaciones antes de hacer la asignacion
+        //Proxy la variable jon es una copia de personas,mantiene una vinculacion entre la copia(Jon) y el objeto (Persona)
+        const jon = new Proxy(persona123,manejador)
+        jon.nombre = "Mxa";
+        jon.apellido = "Xaz";
+        jon.edad = 35;
+        //jon.twitter = "124Qa"
+        //console.log(jon);
+        //console.log(persona123);
+        // Propiedad Dinamicas de los oBjetos
+         // La propiedad en manera dinamica en un objeto, Que se genere dinamicamente
+        const objetoUsuario = {
+            // Nos permite crear directamente dentro del objeto estas propiedades dinamicas:
+            // Los [] indica que la propiedad esta definido dinamicamente
+            //[`id_${Math.round(Math.random()*100 + 3)}`]:"Valor aletorio"
+        };
+        console.log(objetoUsuario);
+        const usuarios = ["Xma","Xme","Xmi"];
+        //Por cada usuario se le genere al objeto Usuario justamente una propiedad (id_: [posiciondelarreglo])
+        usuarios.forEach((usuario,index)=> objetoUsuario[`id_${index}`] = usuario);
+        console.log(objetoUsuario);
+        //this
+        // en la consola this hace referencia al objbeto global (window)
+        //console.log(this);
+        //console.log(this === window);
+        this.nombre123 = "Contexto Global";
+        //this.function = () =>{ console.log("Miguel")}
+        console.log(this);
+        console.log(this.nombre123)
+        //this.function()
+        //Function global de JavaSript
+        function imprimir(){
+            console.log(this.nombre123)
+        };
+        imprimir()
+        const obj = {
+            nombre123:"Contexto Objeto",
+            imprimir:function(){console.log(this.nombre123)}
+        }
+        obj.imprimir();
+        const obj2 = {
+            nombre123:"Contexto Objeto2",
+            imprimir: imprimir
+        }
+        obj2.imprimir()
+        const obj3 = {
+            nombre123:"Contexto Objeto3",
+            // En la arrow hace referencia this deo padre , porque no tiene una estructura 
+            imprimir:()=>{console.log(`${this.nombre123}`)}
+        }
+        obj3.imprimir();
+        function Persona4(nombre){
+            const that = this;
+            that.nombre123 = nombre;
+            //return console.log(this.nombre123);
+            // La function crea un nuevo contexto ,intermante esa function anomina no tiene una propiedad nombre, lo que hace es regresase y leer el this 
+            //del contexto global(padre)
+            //return function(){console.log(this.nombre123);}
+            //return () => console.log(this.nombre123)
+            return function(){console.log(that.nombre123);}
+        }
+        let join = new Persona4("Jhon")
+        join(); 
+        //call,apply,blind nos pemite reservar la referencia de un scoll en particular y utilizarlo en alguna invocacion , en un codigo
+        this.lugar = "ContextoGLobal";
+        function saludar(saludo,aQuien){
+            console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+        };
+        saludar("Hola","Kexa");
+        const objX = {
+            lugar:"ContextoObjeto",
+        }
+        // Recibe como parametro un objeto, cual va ser el contexto que quiero ejecutar
+        //Call y apply realiza la misma funcion, diferencia es como recibe los parametos desde contexto que quiero trabajar
+        //call separados con comas
+        saludar.call(objX,"Hola","Jhx");
+        // apply utiliza un arreglo
+        saludar.apply(objX,["Adios","JMx"]);
+        this.nombre123 = "Window"
+
+
+        const person = {
+            nombre123:"Jxs",
+            saludar(){
+                console.log(`Hola ${this.nombre123}`)
+            }
+        }
+        person.saludar();
+        const otraPerso = {
+            // bind() le indico que enlaza que contexto,
+            saludar:person.saludar.bind(this),
+        }
+        otraPerso.saludar();
+        //JSON Un formato ligero de intercambio el tipo de lenguaje de los datos, primero pasa por JSON
+        const json = {
+            cadena:"Jon",
+            numero:15,
+            booleano:true,
+            arreglo:["c","p"],
+            objeto:{t:"Ex",e:"Ix"},
+            nulo:null
+        };
+        console.log(json);
+        console.log(JSON);
+        // json tiene dos metodos : JSON.parse() ANALIZAR una notacion json(cadena de texto) y lo convertir a un tipo de dato valido para Javascript 
+        // JavaSript valide(Objeto,Arreglo,Boolean,etc)
+        console.log(JSON.parse("{}"));
+    
+        //JSON.stringify metodo que hace lo contrario del Metodo Json.parse() de Objeto,Array,etc lo Convierte en Cadena de Texto
+        console.log(JSON.stringify({}));
+        console.log(JSON.stringify({x:2,y:3})); // Convierte en Json
+        console.log(JSON.stringify(json));
+        console.log(JSON.parse('{"cadena":"Jon","numero":15,"booleano":true,"arreglo":["c","p"],"objeto":{"t":"Ex","e":"Ix"},"nulo":null}'));
+        // Web Api: // Doom dom.html
+        // DOM introduccion   // Doom dom.html
+        
+
+
+
+
+
+        
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
